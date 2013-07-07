@@ -1,0 +1,227 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="http://d29uydmymn3boy.cloudfront.net/assets/application-f1e32e7f4c388fc4b7fcaa05d3b54b75.css" media="all" rel="stylesheet"><meta content="authenticity_token" name="csrf-param">
+</head>
+
+<body class="hub-development"><div class="article-content-container"><div class="article body-container tutorials"><div class="article-banner"><h1 class="article-banner-title"></br>Why You're a Bad PHP Programmer</h1><div class="article-banner-publish-meta">by <span class="author"><a href="http://hub.tutsplus.com/authors/Jason%20Lengstorf">Jason Lengstorf</a> </span><span class="posted-on">on </span><span class="date">Jan 28, 2013</span></div></div><section class="article-body"><p>
+    We all have our bad habits. In this article, we'll go over a list of bad practices that are worth examining, reevaluating, and correcting immediately.</p>
+<p><!--more--></p>
+<div class="republished-shortcode"><strong>Republished Tutorial</strong>
+<p>Every few weeks, we revisit some of our reader's favorite posts from throughout the history of the site. This tutorial was first published in February of 2011.</p>
+</div>
+<hr>
+<h2>Who the Hell Do You Think You Are?</h2>
+<blockquote>
+<p>
+    Every time I open a project that isn't mine, it's accompanied by a tinge of fear that I'm walking into some kind of Temple of Doom scenario, filled with trap doors, secret codes, and that one line of code that, upon alteration,    brings down the entire app (and possibly sends a giant boulder hurtling toward me down a narrow hallway).</p>
+</blockquote>
+<p>
+    When we're wrong, and everything is fine apart from some minor differences  in "how I would have done it," we breathe a sigh of relief, roll up  our sleeves, and dive into the project.</p>
+<p>
+    But when we're right... Well, that's a whole different story.</p>
+<p>
+    Our first thought upon seeing this unholy mess is usually along the lines    of, "Who the hell does this guy think he is?" And rightfully so; what kind    of programmer would willingly create such an unholy mess out of a project?</p>
+<hr>
+<h2>The Answer Might Surprise You</h2>
+<blockquote class="pullquote"><p>Awful code is the accumulation of multiple small    shortcuts or concessions.</p></blockquote>
+<p>
+    Your first instinct might be to assume that the guy who built the project is    a novice, or maybe he's just an idiot. But that's not always the case.</p>
+<p>
+    My theory is that  awful code is the accumulation of multiple small    shortcuts or concessions --  just as often as it's the product of    inexperience or stupidity. This makes the Temple of Doom app much    scarier, because whoever built it might be just as smart, savvy, and    well-read as you are. They just got lazy or put things together in a    rush, and each of those little shortcuts added up into the winding nightmare    that just fell in your lap.</p>
+<p>
+    Even scarier, this could mean that at some point, someone   inherited your code and immediately burst into tears.</p>
+<hr>
+<h2>You're Better Than That, Baby!</h2>
+<p>
+    It never hurts to reexamine your current practices and make sure you're not    taking any shortcuts that could be contributing to someone else's lost sleep.</p>
+<p>
+    Let's take a few minutes and go over some common shortcuts, concessions, and    other bad practices to ensure that our projects aren't striking    fear into the hearts of the villagers.</p>
+<hr>
+<h2>You Don't Plan Before You Start Coding</h2>
+<blockquote class="pullquote"><p>Before you write a single line of code, you should have a solid plan of    attack.</p></blockquote>
+<p>
+    Before you write a single line of code, you should have a solid plan of    attack. This helps keep you on track and avoids wandering code that will    confuse you later, not to mention some other poor soul.</p>
+<p>
+    One approach that has saved me time — both in development and in    commenting — is to write an outline in comments first:</p>
+<div><div id="highlighter_162137" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">01</div><div class="line number2 index1 alt1">02</div><div class="line number3 index2 alt2">03</div><div class="line number4 index3 alt1">04</div><div class="line number5 index4 alt2">05</div><div class="line number6 index5 alt1">06</div><div class="line number7 index6 alt2">07</div><div class="line number8 index7 alt1">08</div><div class="line number9 index8 alt2">09</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="php comments">// Include necessary data</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="php comments">// Initialize the database connection</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="php comments">// Include the common header markup</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="php comments">// Determine the page variables from the POST data</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="php comments">// Load the proper database info using the page vairiables</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="php comments">// Loop through the loaded rows</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">// Format the images for display</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">// Create a permalink</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">// Format the entry for display</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">// Add the formatted entry to the entry array</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="php comments">// Collapse the entry array into page-ready markup</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="php comments">// Output the entries</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="php comments">// Include the common footer markup</code></div></div></td></tr></tbody></table></div></div>
+<p>
+    As you can see, without writing a single line of code, I already know almost    exactly what the file will look like. Best of all, you can plan out    an entire application this way, and if you get to a point where one feature    requires a functionality tweak to another, <em>all you have to do is change    the comment.</em></p>
+<p>
+    It requires a shift in the way you approach development, but it will make    your project organization skills go through the roof.</p>
+<blockquote><p>
+    <em><strong>NOTE:</strong> Some of these comments aren't necessary; some of    them will change; others will need to be added — that's expected. This is    kind of like writing an outline for a paper or writing a grocery list: it just    keeps you on the right track when you go to finish the job.</em>
+</p></blockquote>
+<hr>
+<h2>You Don't Comment Anything</h2>
+<blockquote class="pullquote"><p>Yet the single worst problem with most code that I encounter is that it's    poorly commented, or not commented at all.</p></blockquote>
+<p>
+    It makes me sad that I have to write this down. When something is as easy as    commenting, it shouldn't be something we have to remind each other to do.</p>
+<p>
+    Yet the single worst problem with most code that I encounter is that it's    poorly commented, or not commented at all. This not only adds a good chunk    of time to my initial familiarization with the project, but it pretty much    guarantees that a fix made using an unconventional method out of necessity    will confuse me. Then, if I end up doing any refactoring, I'll inadvertently    break the app because I haven't encountered the extenuating circumstances    that required the fix.</p>
+<p>
+    This process can take anywhere from 10 minutes to 6 hours. (And you've done    this to me, I know where you live. I'm coming for you.)</p>
+<p>
+    So say this out loud: </p>
+<blockquote><p><strong>I, <em>[state your name]</em>, hereby swear to make    comments in any situation where the purpose of the code I've written isn't    immediately apparent.</strong></p></blockquote>
+<p>
+    "Immediately apparent" refers to code that can't be self-documenting    (because it wouldn't be reasonable to do so) and/or    doesn't complete a dead-simple task. Think about it this way: if you had to    stop and think about your solution for more than a few seconds, it probably    merits a quick line of explanation.</p>
+<p>
+    To illustrate my point, I'm going to use an example from    <a href="http://net.tutsplus.com/tutorials/php/20-ways-to-save-kittens-and-learn-php/">an article I wrote    recently for beginners</a>. Consider the following:</p>
+<div><div id="highlighter_260503" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php variable">$pieces</code> <code class="php plain">= </code><code class="php functions">explode</code><code class="php plain">(</code><code class="php string">'.'</code><code class="php plain">, </code><code class="php variable">$image_name</code><code class="php plain">);</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$extension</code> <code class="php plain">= </code><code class="php functions">array_pop</code><code class="php plain">(</code><code class="php variable">$pieces</code><code class="php plain">);</code></div></div></td></tr></tbody></table></div></div>
+<p>
+    What does that do? Did you have to stop and think about it? Do you still not    know for sure what's stored in <tt>$extension</tt>?</p>
+<p>
+    Look at that snippet again, but with one quick comment:</p>
+<div><div id="highlighter_597235" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php comments">// Get the extension off the image filename</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$pieces</code> <code class="php plain">= </code><code class="php functions">explode</code><code class="php plain">(</code><code class="php string">'.'</code><code class="php plain">, </code><code class="php variable">$image_name</code><code class="php plain">);</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$extension</code> <code class="php plain">= </code><code class="php functions">array_pop</code><code class="php plain">(</code><code class="php variable">$pieces</code><code class="php plain">);</code></div></div></td></tr></tbody></table></div></div>
+<blockquote class="pullquote"><p>Five seconds at a time will add up in a big way.</p></blockquote>
+<p>
+    Now glancing at this code doesn't require any additional brain power: you    see the comment, see the code, and never have to question its intent.</p>
+<p>
+    It might only save you five seconds of contemplation, but if you've got a    complex app, five seconds at a time will add up in a big way.</p>
+<p>
+    So stop making excuses. <strong>Write the damn comment.</strong></p>
+<hr>
+<h2>You Sacrifice Clarity for Brevity</h2>
+<blockquote class="pullquote"><p>Good examples of sacrificing clarity for brevity include unclear    variable names and dropping the curly braces.</p></blockquote>
+<p>
+    It's a universal temptation to get something done in as few characters as    possible, but <em>that temptation is kind of like the temptation to only have    one pair of underwear:</em> sure, the laundry gets done quickly, but the problems    that arise from your choice <em>hugely</em> outweigh the benefits.</p>
+<p>
+    Good examples of sacrificing clarity for brevity include short, unclear    variable names (such as <code>$a</code> — what does <code>$a</code>    store?) and dropping the curly braces.</p>
+<p>
+    Dropping curly braces from control structures is a particular pet peeve of    mine. If you don't like curly braces,    <a href="http://stackoverflow.com/questions/1936190/is-it-true-that-i-cant-use-curly-braces-in-python">switch to Python</a>.  In PHP, it's just too easy to lose the meaning without them.</p>
+<p>
+    For example, look at this set of nested if-else statements without curly    braces:</p>
+<div><div id="highlighter_901755" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">01</div><div class="line number2 index1 alt1">02</div><div class="line number3 index2 alt2">03</div><div class="line number4 index3 alt1">04</div><div class="line number5 index4 alt2">05</div><div class="line number6 index5 alt1">06</div><div class="line number7 index6 alt2">07</div><div class="line number8 index7 alt1">08</div><div class="line number9 index8 alt2">09</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="php variable">$foo</code> <code class="php plain">= 8;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="php keyword">if</code><code class="php plain">( </code><code class="php variable">$foo</code><code class="php plain">&lt;10 )</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">( </code><code class="php variable">$foo</code><code class="php plain">&gt;5 )</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Greater than 5!"</code><code class="php plain">;</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Less than 5!"</code><code class="php plain">;</code></div><div class="line number10 index9 alt1"><code class="php keyword">else</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Greater than 10!"</code><code class="php plain">;</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"&lt;br /&gt;Another note."</code><code class="php plain">;</code></div></div></td></tr></tbody></table></div></div>
+<p>
+    At a glance, it looks like the last line should only fire if the value of    <code>$foo</code> is greater than 10. But what's actually happening is a    case of improper indenting; the last echo statement will fire no matter what<br>
+    <code>$foo</code> stores.</p>
+<p>
+    Can you figure it out if you look at it for a few seconds and know that    if-else statements without curly braces only affect the immediate next line?    <em>Of course.</em></p>
+<p>
+    Should you have to waste the energy figuring that out? <strong>Absolutely not.</strong></p>
+<p>
+    Adding curly braces adds a few lines, but it clarifies the statement    immensely, even with the odd indentation:</p>
+<div><div id="highlighter_860635" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">01</div><div class="line number2 index1 alt1">02</div><div class="line number3 index2 alt2">03</div><div class="line number4 index3 alt1">04</div><div class="line number5 index4 alt2">05</div><div class="line number6 index5 alt1">06</div><div class="line number7 index6 alt2">07</div><div class="line number8 index7 alt1">08</div><div class="line number9 index8 alt2">09</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="php variable">$foo</code> <code class="php plain">= 8;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="php keyword">if</code><code class="php plain">( </code><code class="php variable">$foo</code><code class="php plain">&lt;10 )</code></div><div class="line number6 index5 alt1"><code class="php plain">{</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">( </code><code class="php variable">$foo</code><code class="php plain">&gt;5 )</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Greater than 5!"</code><code class="php plain">;</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Less than 5!"</code><code class="php plain">;</code></div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number15 index14 alt2"><code class="php plain">}</code></div><div class="line number16 index15 alt1"><code class="php keyword">else</code></div><div class="line number17 index16 alt2"><code class="php plain">{</code></div><div class="line number18 index17 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"Greater than 10!"</code><code class="php plain">;</code></div><div class="line number19 index18 alt2"><code class="php plain">}</code></div><div class="line number20 index19 alt1"><code class="php functions">echo</code> <code class="php string">"&lt;br /&gt;Another note."</code><code class="php plain">;</code></div></div></td></tr></tbody></table></div></div>
+<p>
+    Yes, it's a good thing to keep your code concise, but not at the expense of    clarity. It's worth the extra lines to ensure no one has to bang their head    against a keyboard trying to sift through your code.</p>
+<hr>
+<h2>You Don't Follow a Coding Standard</h2>
+<blockquote class="pullquote"><p> Choose a standard and stick to it.</p></blockquote>
+<p>
+    Getting cute with your formatting might satisfy your artistic urges, but it    does no good for anyone. Choose a standard (I recommend the <a href="http://pear.php.net/manual/en/standards.php">PEAR coding standard</a>) and stick to it. Everyone will thank you. (Including yourself,    someday.)</p>
+<p>
+    Trust me. I was that guy once — I wanted to have a "signature style" —    and I wasted a lot of hours fixing my atrocious formatting later on. There's    a time to be different and a time to do it like everyone else.</p>
+<p>
+    When it comes to programming, think of it like a spoken language. Grammar and    punctuation exist for a reason: so we can clearly understand each other when    we write things down. Think of coding standards like a geeky version of    <a href="http://amzn.to/hSa60p">Strunk &amp; White's Elements of Style</a>    — following the guidelines means people understand what you're trying    to say, not that you're a boring person.</p>
+<hr>
+<h2>You Duplicate Code</h2>
+<blockquote class="pullquote"><p>
+    You're doing it wrong.
+</p></blockquote>
+<p>
+    Try to look at every single piece of your app as something that will need    to change at some point. If it does, will you have to update more than one    file? If you answered yes, it's time to reevaluate how you write code.</p>
+<p>If you've got code doing the same thing in more than one place in your app,    you're doing it wrong.</p>
+<hr>
+<h2>You Don't Follow a Development Pattern</h2>
+<blockquote class="pullquote"><p>You should always have a structure when you code.</p></blockquote>
+<p>
+    You should always have a structure when you code. I don't    mean to imply that you need to be following the    <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC pattern</a>    or something equally rigid, but I do mean that you should know how to    classify components and where they should go.</p>
+<p>
+    By following a logical development pattern, many decisions become automatic,    and someone coming into your code doesn't have to guess much when looking    for a certain functionality in your codebase.</p>
+<p>
+    It doesn't take long, and it really will clarify your apps in a big way.</p>
+<hr>
+<h2>You're Too Clever for Your Own Good</h2>
+<blockquote class="pullquote"><p>The simplest solution is usually the most appropriate</p></blockquote>
+<p>
+    There's a fine line between a crafty solution and an overcomplicated one.</p>
+<p>
+    It's always tempting to try out some sweet new trick you've learned, but we    have to resist the urge to force a complex solution into a space where a    simple one is sufficient.</p>
+<p>
+    On a basic level, the simplest solution is usually the most appropriate.    You're trying to get from <em>point A</em> to <em>point B</em> —    taking a detour through <em>point Awesome</em> is fun, but really doesn't    add any benefits.</p>
+<p>
+    Your super-sweet solution does, however, pose a problem in which someone    else may not have seen that particular solution and will just get lost. It's    not because they're not as smart as you, either; it's likely because they    didn't see that particular article or weren't trying to force a square    concept into a round problem.</p>
+<p>
+    Don't dumb yourself down, but remember to avoid overcomplicating things    "just 'cause."</p>
+<hr>
+<h2>You're a Wang</h2>
+<blockquote class="pullquote"><p>Avoid actively making your code hard to understand at all costs.</p></blockquote>
+<p>
+    When I was first getting into development, I worked with a guy that was a    self-proclaimed "expert" programmer. Whenever I had a question about a    concept, he never gave me a straight answer; in order to get the answer to    my original question, I had to answer a couple preliminary questions to    "prove you can handle the answer."</p>
+<p>
+    This guy was also really good at writing code that was cryptic,    <a href="http://en.wikipedia.org/wiki/Obfuscated_code">obfuscated</a>,    and just generally confusing.</p>
+<p>
+    Files like his are the result of programmers who think that they need to make    their code hard to read in order to "keep the idiots out."</p>
+<p>
+    The general philosophy behind this tends to be, "If you're not smart enough    to understand this code, you shouldn't be in it in the first place."</p>
+<p>
+    This is a deeply misguided and anti-social approach to programming.    It's a very elitist way of looking at things, and it shows that the programmer    has lost touch with his beginner roots, when he himself needed help.</p>
+<p>Avoid actively making your code hard to understand at all costs.    It doesn't make you any cooler or smarter, and it doesn't bolster respect.    It just makes you a wang.</p>
+<hr>
+<h2>Dude, What Are You Talking About?</h2>
+<blockquote class="pullquote"><p>
+    If you stop learning, then the projects you work on are stuck in whatever    time period you decided to settle.
+</p></blockquote>
+<p>
+    In addition to the shortcuts and general laziness above, another thing that    might be holding you back is a lack of continued learning and forward    progress.</p>
+<p>
+    Technology isn't changing because the community at large is bored and we    decided to redecorate; most new technologies emerge to more efficiently and easily    solve existing problems. Choosing to ignore progress is choosing to start  the slow process of marginalizing your skillset.</p>
+<p>
+    Here are a few things we can all stop doing to make sure that our skillsets are up-to-date, all without having to give up our weekends.</p>
+<hr>
+<h2>You're Trying to Do it All Yourself</h2>
+<blockquote class="pullquote"><p>Find out which of these programmers have a similar approach   and let them fill you in on the big news.</p></blockquote>
+<p>
+    You can't keep up with the whole community. As anyone who's ever tried to    keep up with a subscription to 200+ tech blogs will tell you, it simply can't    be done within a reasonable timeframe.</p>
+<p>
+    Fortunately, there are those within the community who dedicate their time to    watching the progression of technology and reporting their findings. If you    take the time to find out which of these programmers has a similar approach    and style, you can let them fill you in on the big news.</p>
+<p>
+    Watching 2-5 of these "early adopter" type bloggers can be more beneficial than    subscribing to every tech blog you come across for several reasons:</p>
+<ul>
+<li>If you trust their opinion, they'll be screening technologies for you.</li>
+<li>If a technology pops up on more than one of these blogs, you know you should    at least take a few minutes to learn more about it because it's obviously    popular.</li>
+<li>Often, these blogs will feature a quick intro tutorial, which can save    you the headache of starting from zero with a new technology.</li>
+</ul>
+<blockquote><p>
+    Among the PHP bloggers I trust are <a href="http://davidwalsh.name/">David Walsh</a>    and <a href="http://shiflett.org/">Chris Shiflett</a>.
+</p></blockquote>
+<hr>
+<h2>You're Not Out of Your Comfort Zone</h2>
+<blockquote class="pullquote"><p>I    simply mean to suggest that  you'll feel more fulfilled as a programmer and    see your talents progress more and more if you choose to always be looking    to the next level of programming. </p></blockquote>
+<p>
+    If you're not doing something that challenges you, something is wrong.    <strong>Finding new challenges within projects is most of what makes programming    rewarding</strong> (or at least it should be).</p>
+<p>
+    Try asking yourself the following questions when you start looking at new    projects:</p>
+<ul>
+<li>Is there a new technology that interests me that applies here?</li>
+<li>Have I learned of a better way to do this since the last time I took on    a project like this?</li>
+<li>Is there a best practice I need to enforce that I could make sure to    follow throughout this project?</li>
+</ul>
+<p>
+    Keep in mind: I'm not talking about doing anything grossly complex, here. </p>
+<p>It can be as simple as remembering to add    <a href="http://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html">Docblocks</a>    to your objects, or as complex as making your app compatible with    <a href="http://www.xmlrpc.com/">XMLRPC</a> so it's easier for users to post updates.</p>
+<p>
+    Just try not to settle in and convince yourself you've learned everything    you're going to learn. That's when it'll start getting ugly for you.</p>
+<hr>
+<h2>You're Not Sharing</h2>
+<blockquote class="pullquote"><p>Always discuss your code with your fellow programmers.</p></blockquote>
+<p>
+    The best way to improve is to discuss your code with your fellow programmers.    This can be done through multiple avenues: if you're feeling particularly    outgoing, write a tutorial or release an open-source project; if you don't    feel up to something of that scale, maybe you could hang out on a community    forum and offer help to the newcomers.</p>
+<p>    "How does helping the noobs help me progress?" you ask. Usually, if you post a    solution that could be optimized, other experienced programmers are going to    hop in and offer tweaks. So this approach is a double-whammy of awesomeness:    you're not only helping progress the community by offering your knowledge to    beginners, but you're sharpening your own skillset by hanging your chops out    for everyone to see and help you develop.</p>
+<hr>
+<h2>You Don't Have Any Side Projects</h2>
+<p>
+    If you want to get into something new and cool that's a bit too involved to    put into a real project, the best way to learn is to start a side project    that uses said technique.</p>
+<p>
+    That way, you can progress at your own pace, in your free time, and never    risk missing a deadline or "doing it wrong."</p>
+<hr>
+<h2>We're All Guilty</h2>
+<p>
+    If we're doing it right, we should always be improving. And logic tells us    that if we're better now, then we were worse before. And if we follow that    line of reasoning back far enough, there was a point where we were terrible.</p>
+<p>
+    I know that when I look back at some of the code I wrote in the past, I'm    horrified.</p>
+<hr>
+<h2>So... Stop it.</h2>
+<p>
+    We'll never be perfect. But we can do everything in our power to make sure    that we're getting as close as possible.</p>
+<p>
+    What are your pet peeves when dealing with other developers' code? Let    me know in the comments!</p></br></br>
+</section></body></html>
